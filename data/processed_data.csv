@@ -1,0 +1,13 @@
+python
+import csv
+import os
+
+file_path = os.path.join('data', 'processed_data.csv')
+
+with open(file_path, 'w', newline='') as csvfile:
+    fieldnames = ['id', 'name', 'value']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerow({'id': 1, 'name': 'John', 'value': 6.3})
+    writer.writerow({'id': 2, 'name': 'Jane', 'value': 8.1})
+    writer.writerow({'id': 3, 'name': 'Alice', 'value': 5.4})
